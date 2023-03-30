@@ -8,16 +8,21 @@ from src.high_scores import latest, personal_best, personal_top_three
 class HighScoresTest(unittest.TestCase):
     
     # Tests
+    def setUp(self):
+        self.scores = [2, 4, 8, 10, 15]
 
     # Test latest score (the last thing in the list)
     def test_can_get_latest_score(self):
-        scores = [2, 4, 8, 10, 15]
         expected_value = 15
-        actual_value = latest(scores)
+        actual_value = latest(self.scores)
         self.assertEqual(expected_value, actual_value)
 
 
     # Test personal best (the highest score in the list)
+    def test_can_get_personal_list(self):
+        expected_value = 15
+        actual_value = personal_best(self.scores)
+        self.assertEqual(expected_value, actual_value)
 
     # Test top three from list of scores
 
