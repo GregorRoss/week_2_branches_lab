@@ -37,6 +37,12 @@ class HighScoresTest(unittest.TestCase):
         self.assertEqual(expected_value, actual_value)
 
     # Test top three when there is a tie
+    def test_top_three_when_there_is_tie(self):
+        scores_tie = [2, 15, 8, 10, 15, 15]
+        expected_value = "Tie between 15 and 15"
+        actual_value = top_three(scores_tie)
+        self.assertEqual(expected_value, actual_value)
+
 
     # Test top three when there are less than three
 
